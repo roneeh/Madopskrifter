@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Forside extends Fragment {
+public class ForsideFragment extends Fragment {
 
 
-    public Forside() {
+    public ForsideFragment() {
         // Required empty public constructor
     }
 
