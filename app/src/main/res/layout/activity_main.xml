@@ -14,24 +14,33 @@
         android:orientation="vertical"
         android:layout_weight="1"
         android:gravity="center"
-        android:background="@color/colorAccent"
+        android:background="@color/yellowSlightlyLight"
         >
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/forsideButton"/>
+            android:id="@+id/forsideButton"
+            android:background="@drawable/button_test2"
+            android:text="@string/forside"
+            />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/opretOpskriftButton"/>
+            android:id="@+id/opretOpskriftButton"
+            android:background="@drawable/button_test2"
+            android:text="@string/opretOpskrift"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/indstillingerButton"/>
+            android:background="@drawable/button_test2"
+            android:id="@+id/indstillingerButton"
+            android:text="@string/indstillinger"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/hjaelpButton"/>
+            android:background="@drawable/button_test2"
+            android:id="@+id/hjaelpButton"
+            android:text="@string/hjaelp"/>
         <!--<Button Evt. en logout button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -43,6 +52,8 @@
         android:layout_height="match_parent"
         android:layout_weight="5"
         android:id="@+id/mainContent"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         >
     </FrameLayout>
 
