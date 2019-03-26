@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OpretOpskriftFragment"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="4.5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="?android:attr/buttonBarStyle">
+
+            <Button
+                android:id="@+id/tilfoejBillede"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tilfoej_billede"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/tilfoejTekst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tilfoej_tekst"
+                style="?android:attr/buttonBarButtonStyle"/>
+        </LinearLayout>
+    </LinearLayout>

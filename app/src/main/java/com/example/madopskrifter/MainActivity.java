@@ -18,16 +18,14 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-
-
         fragmentManager = getSupportFragmentManager();
 
-
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ForsideFragment forside = new ForsideFragment();
+  //      ForsideFragment forside = new ForsideFragment();
+
+        OpretOpskriftFragment forside = new OpretOpskriftFragment();
+
         fragmentTransaction.add(R.id.mainContent,forside, null);
         fragmentTransaction.commit();
-
-
     }
 }

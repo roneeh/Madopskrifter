@@ -51,7 +51,5 @@ public class ForsideFragment extends Fragment {
         }
 
         return view;
-
-
     }
 }
