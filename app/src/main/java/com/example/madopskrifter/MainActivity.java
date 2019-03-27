@@ -1,14 +1,18 @@
 package com.example.madopskrifter;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +22,37 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        findViewById(R.id.forsideButton).setOnClickListener(this);
+        findViewById(R.id.opretOpskriftButton).setOnClickListener(this);
+        findViewById(R.id.hjaelpButton).setOnClickListener(this);
+        findViewById(R.id.indstillingerButton).setOnClickListener(this);
+
+    }
+
+    protected void ChangeFragment(Fragment fragment)
+    {
         fragmentManager = getSupportFragmentManager();
-
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-  //      ForsideFragment forside = new ForsideFragment();
-
-        OpretOpskriftFragment forside = new OpretOpskriftFragment();
-
-        fragmentTransaction.add(R.id.mainContent,forside, null);
+        if (fragmentManager.findFragmentById(R.id.mainContent) != null)
+        {
+            fragmentManager.beginTransaction().remove(fragmentManager.findFragmentById(R.id.mainContent)).commit();
+        }
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.mainContent,fragment, null);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.opretOpskriftButton:
+                ChangeFragment(new OpretOpskriftFragment());
+                break;
+/*            case R.id.indstillingerButton:
+                ChangeFragment(new );*/
+            default:
+                ChangeFragment(new ForsideFragment());
+                break;
+        }
     }
 }
