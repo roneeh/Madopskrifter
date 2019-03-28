@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="680dp"
+    android:layout_height="600dp"
+    android:layout_gravity="center"
+    android:background="@color/colorLight"
+    tools:context=".LoginFragment"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="250dp"
+        android:paddingTop="20dp"
+        android:textSize="50dp"
+        android:text="Login"
+        android:background="@color/colorSlightlyLight"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:layout_marginLeft="150dp"
+            android:textSize="30dp"
+            android:paddingTop="30dp"
+            />
+
+        <EditText
+            android:id="@+id/txtUsername"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffe3"
+            android:layout_marginLeft="150dp"
+            android:padding="10dp"
+            android:lines="1"
+            >
+            <requestFocus></requestFocus>
+        </EditText>
+
+        <TextView
+            android:id="@+id/txtPass"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="30dp"
+            android:layout_marginLeft="150dp"/>
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffe3"
+            android:padding="10dp"
+            android:layout_marginLeft="150dp"
+            android:lines="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffe3"
+            android:layout_margin="20dp"
+            android:text="Logind"
+            android:id="@+id/loginButton"/>
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="#ffffe3"
+            android:text="Register"
+            android:id="@+id/registerButton"/>
+    </LinearLayout>
+
+
+</LinearLayout>
