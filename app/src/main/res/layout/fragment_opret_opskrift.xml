@@ -12,17 +12,33 @@
         android:orientation="vertical"
         >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:id="@+id/opskriftBilledeLayout">
 
             <ImageView
                 android:layout_width="400dp"
                 android:layout_height="400dp"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:id="@+id/opskriftBillede"
+                />
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/opskriftBilledeTeskt"
+                android:layout_alignLeft="@+id/opskriftBillede"
+                android:layout_alignTop="@+id/opskriftBillede"
+                android:layout_alignRight="@+id/opskriftBillede"
+                android:layout_alignBottom="@+id/opskriftBillede"
+                android:gravity="center"
+                android:text="Tryk for at tilføje et billede"
+                android:textSize="30sp"
+                android:textColor="#ffffff"
+                />
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

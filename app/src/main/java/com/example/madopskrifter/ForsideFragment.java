@@ -44,7 +44,6 @@ public class ForsideFragment extends Fragment {
                 if (resultSet != null) {
                     try {
                         while (resultSet.next()) {
-
                             ForsideFragment.this.textView.append("\nUsername:" + resultSet.getString("brugerNavn"));
                         }
                     } catch (SQLException e) {

@@ -1,8 +1,6 @@
 package com.example.madopskrifter;
 
 import android.os.AsyncTask;
-import android.util.Log;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,9 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SQLQuery extends AsyncTask<String, Void, ResultSet> {
-
-    private Connection connection;
-
     private JobInterface jobInterface;
 
     public SQLQuery(JobInterface jobInterface)
@@ -27,7 +22,7 @@ public class SQLQuery extends AsyncTask<String, Void, ResultSet> {
 
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver"); // Det virker uden denne linje. Hvilket undrer os, da i alle eksempler vi har fundet bliver dette brugt i.
-            connection = DriverManager.getConnection(connectionString, "sonron", "Passw0rd");
+            Connection connection = DriverManager.getConnection(connectionString, "sonron", "Passw0rd");
             Statement statement = connection.createStatement();
             resultSet = statement.executeQuery(sqlStatement[0]);
         } catch (SQLException e) {
