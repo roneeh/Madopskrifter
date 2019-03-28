@@ -14,9 +14,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
+    public static MainActivity currentMainActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        currentMainActivity = this;
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -26,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.opretOpskriftButton).setOnClickListener(this);
         findViewById(R.id.hjaelpButton).setOnClickListener(this);
         findViewById(R.id.indstillingerButton).setOnClickListener(this);
+        findViewById(R.id.menuLayout).setVisibility(View.GONE);
+        ChangeFragment(new LoginFragment());
 
     }
 
