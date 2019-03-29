@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 /**
@@ -40,7 +39,7 @@ public class LoginFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLQuery sqlQuery = new SQLQuery(new JobInterface() {
+                SQLQueryWithResult sqlQueryWithResult = new SQLQueryWithResult(new JobInterface() {
                     @Override
                     public void doJob(ResultSet resultSet) {
                             if(resultSet != null) {
@@ -49,7 +48,7 @@ public class LoginFragment extends Fragment {
                             }
                     }
                 });
-                sqlQuery.execute("SELECT * FROM Bruger WHERE brugerNavn='" + LoginFragment.this.txtUsername.getText() + "' AND brugerPassword='" + LoginFragment.this.txtPassword.getText() + "'" );
+                sqlQueryWithResult.execute("SELECT * FROM Bruger WHERE brugerNavn='" + LoginFragment.this.txtUsername.getText() + "' AND brugerPassword='" + LoginFragment.this.txtPassword.getText() + "'" );
             }
         });
         return view;

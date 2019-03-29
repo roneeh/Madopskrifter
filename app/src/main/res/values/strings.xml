@@ -8,4 +8,6 @@
     <string name="hjaelp">Hjælp</string>
     <string name="tilfoej_billede">Tilføj billede</string>
     <string name="tilfoej_tekst">Tilføj tekst</string>
+    <string name="tilfoej_billede_tryk">Tryk for at tilføje et billede</string>
+    <string name="titel_opskrift">Titel på opskrift</string>
 </resources>

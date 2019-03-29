@@ -30,16 +30,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.opretOpskriftButton).setOnClickListener(this);
         findViewById(R.id.hjaelpButton).setOnClickListener(this);
         findViewById(R.id.indstillingerButton).setOnClickListener(this);
-        findViewById(R.id.menuLayout).setVisibility(View.GONE);
-        ChangeFragment(new LoginFragment());
+      //  findViewById(R.id.menuLayout).setVisibility(View.GONE);
+     //   ChangeFragment(new LoginFragment());
 
     }
 
     protected void ChangeFragment(Fragment fragment)
     {
         fragmentManager = getSupportFragmentManager();
-        if (fragmentManager.findFragmentById(R.id.mainContent) != null)
-        {
+        if (fragmentManager.findFragmentById(R.id.mainContent) != null) {
             fragmentManager.beginTransaction().remove(fragmentManager.findFragmentById(R.id.mainContent)).commit();
         }
         fragmentTransaction = fragmentManager.beginTransaction();

@@ -1,22 +1,15 @@
 package com.example.madopskrifter;
 
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.concurrent.ExecutionException;
-
-import javax.xml.transform.Result;
 
 
 /**
@@ -53,7 +46,7 @@ public class ForsideFragment extends Fragment {
             }
         };
 
-        SQLQuery query = new SQLQuery(jobInterface);
+        SQLQueryWithResult query = new SQLQueryWithResult(jobInterface);
 
         query.execute("SELECT * FROM Bruger");
 
