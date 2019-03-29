@@ -3,11 +3,13 @@ package com.example.madopskrifter;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.sql.ResultSet;
 
@@ -29,7 +31,7 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_register, container, false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
 
         Button register = view.findViewById(R.id.registerButton);
         Button cancel = view.findViewById(R.id.cancelButton);
@@ -41,17 +43,26 @@ public class RegisterFragment extends Fragment {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLQuery sqlQuery = new SQLQuery(new JobInterface() {
 
+                if ((txtPassword.getText()).equals(txtConfirmPass.getText()))
+                {
+                    Log.w("UH","HUHUHUUH");
+                    Toast.makeText(v.getContext(), "Passwordene skal være ens! " + txtConfirmPass.getText() + " " + txtPassword.getText(), Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                SQLQuery sqlQuery = new SQLQuery(new JobInterface() {
                     @Override
-                    public void doJob(ResultSet resultSet) {
+                    public void doJob() {
+                        txtConfirmPass.setText(null);
+                        txtEmail.setText(null);
+                        txtPassword.setText(null);
+                        txtUsername.setText(null);
 
                     }
                 });
 
-                sqlQuery.execute("Create Table  Bruger where brugerNavn='" + txtUsername + "' +
-                    brugerPassword='" txtPassword "' " );
-
+                sqlQuery.execute("INSERT INTO Bruger(brugerNavn, brugerPassword, brugerEmail, brugerAdmin) VALUES('" + txtUsername.getText() + "','" + txtPassword.getText() +  "','" + txtEmail.getText() +"',0)");
             }
         });
 

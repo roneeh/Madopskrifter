@@ -23,7 +23,7 @@ public class SQLQuery extends AsyncTask<String, Void, Void> {
             Class.forName("net.sourceforge.jtds.jdbc.Driver"); // Det virker uden denne linje. Hvilket undrer os, da i alle eksempler vi har fundet bliver dette brugt i.
             Connection connection = DriverManager.getConnection(connectionString, "sonron", "Passw0rd");
             Statement statement = connection.createStatement();
-            statement.executeQuery(sqlStatement[0]);
+            statement.execute(sqlStatement[0]);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

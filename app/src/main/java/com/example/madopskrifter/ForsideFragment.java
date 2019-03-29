@@ -31,25 +31,6 @@ public class ForsideFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_forside, container, false);
         textView = view.findViewById(R.id.SomeText);
-        JobInterface jobInterface = new JobInterface() {
-            @Override
-            public void doJob(ResultSet resultSet) {
-                if (resultSet != null) {
-                    try {
-                        while (resultSet.next()) {
-                            ForsideFragment.this.textView.append("\nUsername:" + resultSet.getString("brugerNavn"));
-                        }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        };
-
-        SQLQueryWithResult query = new SQLQueryWithResult(jobInterface);
-
-        query.execute("SELECT * FROM Bruger");
-
         return view;
     }
 }

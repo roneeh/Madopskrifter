@@ -39,7 +39,7 @@ public class LoginFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SQLQueryWithResult sqlQueryWithResult = new SQLQueryWithResult(new JobInterface() {
+                SQLQueryWithResult sqlQueryWithResult = new SQLQueryWithResult(new JobInterfaceParam() {
                     @Override
                     public void doJob(ResultSet resultSet) {
                             if(resultSet != null) {
@@ -51,6 +51,14 @@ public class LoginFragment extends Fragment {
                 sqlQueryWithResult.execute("SELECT * FROM Bruger WHERE brugerNavn='" + LoginFragment.this.txtUsername.getText() + "' AND brugerPassword='" + LoginFragment.this.txtPassword.getText() + "'" );
             }
         });
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.currentMainActivity.ChangeFragment(new RegisterFragment());
+            }
+        });
+
         return view;
     }
 

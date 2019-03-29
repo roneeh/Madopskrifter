@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class SQLQueryWithResult extends AsyncTask<String, Void, ResultSet> {
-    private JobInterface jobInterface;
+    private JobInterfaceParam jobInterface;
 
-    public SQLQueryWithResult(JobInterface jobInterface)
+    public SQLQueryWithResult(JobInterfaceParam jobInterface)
     {
         this.jobInterface = jobInterface;
     }
