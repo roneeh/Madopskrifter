@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -27,7 +28,8 @@ public class OpretOpskriftFragment extends Fragment {
 
     public static final int PICK_IMAGE = 1;
 
-    private ImageView opskriftBillede;
+    private ImageView opskriftBilledeImageView;
+    private TextView opskriftBilledeTextView;
     private View view;
 
     public OpretOpskriftFragment() {
@@ -40,8 +42,10 @@ public class OpretOpskriftFragment extends Fragment {
                              Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.fragment_opret_opskrift, container, false);
-        opskriftBillede = view.findViewById(R.id.opskriftBillede);
-        opskriftBillede.setOnClickListener(new View.OnClickListener() {
+        opskriftBilledeImageView = view.findViewById(R.id.opskriftBilledeImageView);
+        opskriftBilledeTextView = view.findViewById(R.id.opskriftBilledeTextView);
+
+        opskriftBilledeImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -50,7 +54,6 @@ public class OpretOpskriftFragment extends Fragment {
                 startActivityForResult(Intent.createChooser(intent, "Vælg Billede"), PICK_IMAGE);
             }
         });
-
         return view;
     }
 
@@ -60,11 +63,9 @@ public class OpretOpskriftFragment extends Fragment {
         if (requestCode == PICK_IMAGE) {
             if(data.getData() != null) {
                 Uri selectedImage = data.getData();
-                Picasso.with(this.getContext()).load(selectedImage).rotate(Helpers.getExifAngle(this.getContext(), selectedImage)).fit().into(opskriftBillede);
+                Picasso.with(this.getContext()).load(selectedImage).rotate(Helpers.getExifAngle(this.getContext(), selectedImage)).fit().into(opskriftBilledeImageView);
+                opskriftBilledeTextView.setText(null);
             }
         }
     }
-
-
-
 }

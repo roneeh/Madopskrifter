@@ -3,48 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OpretOpskriftFragment"
->
+    tools:context=".OpretOpskriftFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center"
         >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/opskriftBilledeLayout">
+            android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opskriftBilledeLayout"
+            >
 
             <ImageView
                 android:layout_width="400dp"
                 android:layout_height="400dp"
                 android:background="@color/colorPrimary"
-                android:id="@+id/opskriftBillede"
+                android:id="@+id/opskriftBilledeImageView"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/opskriftBilledeTeskt"
-                android:layout_alignLeft="@+id/opskriftBillede"
-                android:layout_alignTop="@+id/opskriftBillede"
-                android:layout_alignRight="@+id/opskriftBillede"
-                android:layout_alignBottom="@+id/opskriftBillede"
+                android:id="@+id/opskriftBilledeTextView"
+                android:layout_alignLeft="@+id/opskriftBilledeImageView"
+                android:layout_alignTop="@+id/opskriftBilledeImageView"
+                android:layout_alignRight="@+id/opskriftBilledeImageView"
+                android:layout_alignBottom="@+id/opskriftBilledeImageView"
                 android:gravity="center"
-                android:text="Tryk for at tilføje et billede"
+                android:text="@string/tilfoej_billede_tryk"
                 android:textSize="30sp"
                 android:textColor="#ffffff"
                 />
         </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <EditText
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:text="@string/titel_opskrift"
+            android:textStyle="bold"
+            android:textSize="50sp"
+            android:id="@+id/titelOpskriftEditText"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/Part2"
             style="?android:attr/buttonBarStyle">
+<!--            android:visibility="gone"
+            >-->
 
             <Button
                 android:id="@+id/tilfoejBillede"
@@ -60,6 +79,16 @@
                 android:text="@string/tilfoej_tekst"
                 style="?android:attr/buttonBarButtonStyle"/>
         </LinearLayout>
+
+        <ProgressBar
+            android:layout_width="300dp"
+            android:layout_height="20dp"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:indeterminateTint="@color/colorPrimary"
+
+            android:progress="25"
+            />
+
     </LinearLayout>
 
 </ScrollView>
