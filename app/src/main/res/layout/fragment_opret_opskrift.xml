@@ -8,88 +8,152 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
-        >
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vælg hovedbillede og titel"
+            android:textSize="50sp"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/overskriftTextView"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:id="@+id/billedeTitelLayout">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/opskriftBilledeLayout"
-            >
+            <RelativeLayout
+                android:id="@+id/opskriftBilledeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="400dp"
-                android:layout_height="400dp"
-                android:background="@color/colorPrimary"
-                android:id="@+id/opskriftBilledeImageView"
-                />
+                <ImageView
+                    android:id="@+id/opskriftBilledeImageView"
+                    android:layout_width="400dp"
+                    android:layout_height="400dp"
+                    android:background="@color/colorPrimary" />
 
-            <TextView
+                <TextView
+                    android:id="@+id/opskriftBilledeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/opskriftBilledeImageView"
+                    android:layout_alignTop="@+id/opskriftBilledeImageView"
+                    android:layout_alignRight="@+id/opskriftBilledeImageView"
+                    android:layout_alignBottom="@+id/opskriftBilledeImageView"
+                    android:gravity="center"
+                    android:text="@string/tilfoej_billede_tryk"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/titelOpskriftEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/opskriftBilledeTextView"
-                android:layout_alignLeft="@+id/opskriftBilledeImageView"
-                android:layout_alignTop="@+id/opskriftBilledeImageView"
-                android:layout_alignRight="@+id/opskriftBilledeImageView"
-                android:layout_alignBottom="@+id/opskriftBilledeImageView"
-                android:gravity="center"
-                android:text="@string/tilfoej_billede_tryk"
-                android:textSize="30sp"
-                android:textColor="#ffffff"
-                />
-        </RelativeLayout>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/titel_opskrift"
-            android:textStyle="bold"
-            android:textSize="50sp"
-            android:id="@+id/titelOpskriftEditText"
-            />
+                android:hint="@string/titel_opskrift"
+                android:textSize="50sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:id="@+id/ingrediensLayout"
+            android:visibility="gone"
+            >
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:useDefaultMargins="true"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500 gram"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mel"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30 sps"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="vanilje"/>
+            </GridLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Måleenhed og værdi"
+                    android:inputType="text"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="200dp"
+                    android:hint="Ingrediensens navn"
+                    android:inputType="text"/>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tilføj ingrediens"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/trinLayout"
+            style="?android:attr/buttonBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/Part2"
-            style="?android:attr/buttonBarStyle">
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/tilfoejBillede"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tilfoej_billede"
-                style="?android:attr/buttonBarButtonStyle" />
+                android:text="@string/tilfoej_billede" />
 
             <Button
                 android:id="@+id/tilfoejTekst"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tilfoej_tekst"
-                style="?android:attr/buttonBarButtonStyle"/>
+                android:text="@string/tilfoej_tekst" />
         </LinearLayout>
 
         <Button
+            android:id="@+id/naesteButton"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/naeste"
-            style="?android:attr/buttonBarButtonStyle"/>
+            android:text="@string/naeste" />
 
         <ProgressBar
+            style="@android:style/Widget.ProgressBar.Horizontal"
             android:layout_width="300dp"
             android:layout_height="20dp"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:indeterminateTint="@color/colorPrimary"
-            android:progress="25"
-            />
+            android:progress="0" />
     </LinearLayout>
 </ScrollView>
