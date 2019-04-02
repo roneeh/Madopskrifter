@@ -5,6 +5,9 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -58,6 +61,24 @@ public class Helpers {
         catch (Exception e) {
             e.printStackTrace();
             return -1f;
+        }
+    }
+
+    public static void RemoveKeyboard(EditText editText)
+    {
+        InputMethodManager inputManager = (InputMethodManager) MainActivity.currentMainActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+    }
+
+    public static Boolean KeyBoardEnterPressed(KeyEvent event, int keyCode)
+    {
+        if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

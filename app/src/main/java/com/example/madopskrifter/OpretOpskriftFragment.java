@@ -2,15 +2,19 @@ package com.example.madopskrifter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.input.InputManager;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,10 +30,11 @@ import java.io.InputStream;
  */
 public class OpretOpskriftFragment extends Fragment {
 
-    public static final int PICK_IMAGE = 1;
+    private static final int PICK_IMAGE = 1;
 
     private ImageView opskriftBilledeImageView;
     private TextView opskriftBilledeTextView;
+    private EditText titelOpskriftEditText;
     private View view;
 
     public OpretOpskriftFragment() {
@@ -42,8 +47,10 @@ public class OpretOpskriftFragment extends Fragment {
                              Bundle savedInstanceState)
     {
         view = inflater.inflate(R.layout.fragment_opret_opskrift, container, false);
+
         opskriftBilledeImageView = view.findViewById(R.id.opskriftBilledeImageView);
         opskriftBilledeTextView = view.findViewById(R.id.opskriftBilledeTextView);
+        titelOpskriftEditText = view.findViewById(R.id.titelOpskriftEditText);
 
         opskriftBilledeImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +61,21 @@ public class OpretOpskriftFragment extends Fragment {
                 startActivityForResult(Intent.createChooser(intent, "Vælg Billede"), PICK_IMAGE);
             }
         });
+
+        titelOpskriftEditText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if (Helpers.KeyBoardEnterPressed(event, keyCode))
+                {
+                    Helpers.RemoveKeyboard(titelOpskriftEditText);
+                    return true;
+                }
+
+                return false;
+            }
+        });
+
         return view;
     }
 

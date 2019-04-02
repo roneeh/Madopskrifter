@@ -36,6 +36,10 @@ public class SQLQueryWithResult extends AsyncTask<String, Void, ResultSet> {
     @Override
     protected void onPostExecute(ResultSet resultSet) {
         super.onPostExecute(resultSet);
-        jobInterface.doJob(resultSet);
+        try {
+            jobInterface.doJob(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
