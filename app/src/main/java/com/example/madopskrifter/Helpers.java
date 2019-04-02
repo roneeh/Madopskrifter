@@ -1,11 +1,19 @@
 package com.example.madopskrifter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.media.ExifInterface;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.Nullable;
+import android.view.KeyEvent;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.ImageView;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -24,8 +32,7 @@ public class Helpers {
                     return new ExifInterface(inputStream);
                 }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
@@ -35,7 +42,7 @@ public class Helpers {
     public static float getExifAngle(Context context, Uri uri) {
         try {
             ExifInterface exifInterface = getExifInterface(context, uri);
-            if(exifInterface == null) {
+            if (exifInterface == null) {
                 return -1f;
             }
             int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION,
@@ -54,10 +61,37 @@ public class Helpers {
                 default:
                     return -1f;
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return -1f;
         }
+    }
+
+    public static void RemoveKeyboard(EditText editText) {
+        InputMethodManager inputManager = (InputMethodManager) MainActivity.currentMainActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputManager.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+    }
+
+    public static Boolean KeyBoardEnterPressed(KeyEvent event, int keyCode) {
+        if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static byte[] ConvertImageViewToVarBinary(ImageView imageView)
+    {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) imageView.getDrawable();
+        Bitmap bitmap = bitmapDrawable.getBitmap();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+        return stream.toByteArray();
+    }
+
+    public static ImageView ConvertVarBinaryToImageView()
+    {
+
+        return null;
     }
 }
