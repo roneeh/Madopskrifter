@@ -11,4 +11,6 @@
     <string name="tilfoej_billede_tryk">Tryk for at tilføje et billede</string>
     <string name="titel_opskrift">Titel på opskrift</string>
     <string name="naeste">Næste</string>
+    <string name="tilbage">Tilbage</string>
+    <string name="vaelghovedbillede">Vælg hovedbillede og titel</string>
 </resources>
