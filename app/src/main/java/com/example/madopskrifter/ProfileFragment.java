@@ -14,9 +14,9 @@ import android.widget.ListView;
  */
 public class ProfileFragment extends Fragment {
 
-/*    ListView listView;
+    ListView profileListView;
 
-    String profileData[] = {"Email", ""}*/
+    String profileData[] = {"Email", "sadfa", "xdsfs"};
 
     public ProfileFragment() {
         // Required empty public constructor
