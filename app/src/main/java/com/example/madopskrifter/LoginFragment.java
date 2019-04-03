@@ -108,7 +108,6 @@ public class LoginFragment extends Fragment {
                 else
                 {
                     Toast.makeText(view.getContext(), "Brugernavn eller password er forkert!", Toast.LENGTH_LONG).show();
-
                 }
             }
         });

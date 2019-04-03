@@ -20,7 +20,7 @@ public class Opskrift {
     private String datoOprettet; ///< Datoen opskriften er oprettet.
     private int oprettetAf; ///< Hvem der har oprettet opskriften.
     private int likes; ///< Hvor mange likes denne opskrift har.
-    private byte[] hovedbillede; ///< Billedet der vises med titlen, når man ser den på forsiden og i opskriften. 
+    private byte[] hovedbillede; ///< Billedet der vises med titlen, når man ser den på forsiden og i opskriften.
 
     /**
      * Herunder har vi lavet en constructor til vores klasse.
