@@ -3,6 +3,9 @@ package com.example.madopskrifter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class Profil {
     private int brugerId;
     private String brugerNavn;

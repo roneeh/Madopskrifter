@@ -28,6 +28,13 @@ public class LoginFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,6 +90,9 @@ public class LoginFragment extends Fragment {
         return view;
     }
 
+    /**
+     *Den skal eksekvere data fra datatbase til at login i applikationen
+     */
     private void Login()
     {
         SQLQueryWithResult sqlQueryWithResult = new SQLQueryWithResult(new JobInterfaceParam() {
