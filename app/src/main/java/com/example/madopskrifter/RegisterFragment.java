@@ -47,7 +47,8 @@ public class RegisterFragment extends Fragment {
                 if ((txtPassword.getText()).equals(txtConfirmPass.getText()))
                 {
                     Log.w("UH","HUHUHUUH");
-                    Toast.makeText(v.getContext(), "Passwordene skal være ens! " + txtConfirmPass.getText() + " " + txtPassword.getText(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(v.getContext(), "Passwordene skal være ens! " +
+                            txtConfirmPass.getText() + " " + txtPassword.getText(), Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -62,7 +63,8 @@ public class RegisterFragment extends Fragment {
                     }
                 });
 
-                sqlQuery.execute("INSERT INTO Bruger(brugerNavn, brugerPassword, brugerEmail, brugerAdmin) VALUES('" + txtUsername.getText() + "','" + txtPassword.getText() +  "','" + txtEmail.getText() +"',0)");
+                sqlQuery.execute("INSERT INTO Bruger(brugerNavn, brugerPassword, brugerEmail, brugerAdmin) " +
+                        "VALUES('" + txtUsername.getText() + "','" + txtPassword.getText() +  "','" + txtEmail.getText() +"',0)");
             }
         });
 
