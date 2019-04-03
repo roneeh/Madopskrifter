@@ -2,6 +2,9 @@ package com.example.madopskrifter;
 
 import java.util.List;
 
+/**
+ *
+ */
 public class Profil {
 
     private int brugerId;

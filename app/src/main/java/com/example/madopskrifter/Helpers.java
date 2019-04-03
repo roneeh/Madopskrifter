@@ -19,10 +19,17 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Vi har lavet en klass Helpers
+ * Vi har lavet en klass Helpers som kan vi bruges i andre metode i andre class
  */
 
 public class Helpers {
+
+    /**
+     *
+     * @param context
+     * @param uri
+     * @return
+     */
 
     @Nullable
     private static ExifInterface getExifInterface(Context context, Uri uri) {
@@ -44,6 +51,12 @@ public class Helpers {
     }
 
 
+    /**
+     *
+     * @param context
+     * @param uri
+     * @return
+     */
     public static float getExifAngle(Context context, Uri uri) {
         try {
             ExifInterface exifInterface = getExifInterface(context, uri);
@@ -72,11 +85,22 @@ public class Helpers {
         }
     }
 
+
+    /**
+     * Vi har lavet den metode at fjerne kayboard når vi færdig med skriv
+     * @param editText
+     */
     public static void RemoveKeyboard(EditText editText) {
         InputMethodManager inputManager = (InputMethodManager) MainActivity.currentMainActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputManager.hideSoftInputFromWindow(editText.getWindowToken(), 0);
     }
 
+    /**
+     *
+     * @param event
+     * @param keyCode
+     * @return
+     */
     public static Boolean KeyBoardEnterPressed(KeyEvent event, int keyCode) {
         if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
             return true;
