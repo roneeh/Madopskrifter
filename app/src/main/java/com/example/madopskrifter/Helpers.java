@@ -2,6 +2,7 @@ package com.example.madopskrifter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.ExifInterface;
 import android.media.Image;
@@ -93,9 +94,11 @@ public class Helpers {
         return stream.toByteArray();
     }
 
-    public static ImageView ConvertVarBinaryToImageView()
+    public static ImageView ConvertVarBinaryToImageView(byte[] imageByteArray, Context context, int width, int height)
     {
-
-        return null;
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imageByteArray, 0,imageByteArray.length);
+        ImageView imageView = new ImageView(context);
+        imageView.setImageBitmap(Bitmap.createScaledBitmap(bitmap,width, height, false));
+        return imageView;
     }
 }

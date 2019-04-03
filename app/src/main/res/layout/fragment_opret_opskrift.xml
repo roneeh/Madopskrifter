@@ -12,19 +12,19 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/overskriftTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Vælg hovedbillede og titel"
-            android:textSize="50sp"
             android:layout_marginBottom="15dp"
-            android:id="@+id/overskriftTextView"/>
+            android:text="@string/vaelghovedbillede"
+            android:textSize="50sp" />
 
         <LinearLayout
+            android:id="@+id/billedeTitelLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:id="@+id/billedeTitelLayout">
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/opskriftBilledeLayout"
@@ -62,62 +62,65 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ingrediensLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:id="@+id/ingrediensLayout"
-            android:visibility="gone"
-            >
+            android:orientation="vertical"
+            android:visibility="gone">
+
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
-                android:useDefaultMargins="true"
-                >
+                android:useDefaultMargins="true">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="500 gram"/>
+                    android:text="500 gram" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="mel"/>
+                    android:text="mel" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="30 sps"/>
+                    android:text="30 sps" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="vanilje"/>
+                    android:text="vanilje" />
             </GridLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_vertical">
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
 
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Måleenhed og værdi"
-                    android:inputType="text"/>
+                    android:inputType="text" />
+
                 <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:minWidth="200dp"
                     android:hint="Ingrediensens navn"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    android:minWidth="200dp" />
             </LinearLayout>
 
             <Button
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tilføj ingrediens"
-                style="?android:attr/buttonBarButtonStyle"
-                />
+                android:text="Tilføj ingrediens" />
         </LinearLayout>
 
         <LinearLayout
@@ -143,12 +146,26 @@
                 android:text="@string/tilfoej_tekst" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/naesteButton"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/naeste" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/tilbageButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tilbage"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/naesteButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/naeste" />
+        </LinearLayout>
 
         <ProgressBar
             style="@android:style/Widget.ProgressBar.Horizontal"

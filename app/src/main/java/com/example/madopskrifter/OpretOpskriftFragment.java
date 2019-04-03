@@ -37,7 +37,7 @@ public class OpretOpskriftFragment extends Fragment {
     private ImageView opskriftBilledeImageView;
     private TextView opskriftBilledeTextView, overskriftTextView;
     private EditText titelOpskriftEditText;
-    private Button naesteButton;
+    private Button naesteButton, tilbageButton;
     private View view;
 
     private int opretOpskriftTrin = 0;
@@ -56,6 +56,7 @@ public class OpretOpskriftFragment extends Fragment {
         opskriftBilledeTextView = view.findViewById(R.id.opskriftBilledeTextView);
         titelOpskriftEditText = view.findViewById(R.id.titelOpskriftEditText);
         naesteButton = view.findViewById(R.id.naesteButton);
+        tilbageButton = view.findViewById(R.id.tilbageButton);
         trinLayout = view.findViewById(R.id.trinLayout);
         billedeTitelLayout = view.findViewById(R.id.billedeTitelLayout);
         ingrediensLayout = view.findViewById(R.id.ingrediensLayout);
@@ -88,18 +89,22 @@ public class OpretOpskriftFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 opretOpskriftTrin++;
-                switch (opretOpskriftTrin) {
-                    case 1:
-                        billedeTitelLayout.setVisibility(View.GONE);
-                        ingrediensLayout.setVisibility(View.VISIBLE);
-                        overskriftTextView.setText("Vælg ingredienser");
-                        break;
-                    case 2:
-                        ingrediensLayout.setVisibility(View.GONE);
-                        trinLayout.setVisibility(View.VISIBLE);
-                        overskriftTextView.setText("Opret trin");
-                        break;
+
+                if (opretOpskriftTrin >= 1 && opretOpskriftTrin <= 3) {
+                    tilbageButton.setVisibility(View.VISIBLE);
                 }
+                ChangeStepLayout();
+            }
+        });
+
+        tilbageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                opretOpskriftTrin--;
+                if (opretOpskriftTrin == 0) {
+                    tilbageButton.setVisibility(View.GONE);
+                }
+                ChangeStepLayout();
             }
         });
 
@@ -114,6 +119,26 @@ public class OpretOpskriftFragment extends Fragment {
                 Picasso.with(this.getContext()).load(selectedImage).rotate(Helpers.getExifAngle(this.getContext(), selectedImage)).fit().into(opskriftBilledeImageView);
                 opskriftBilledeTextView.setText(null);
             }
+        }
+    }
+
+    private void ChangeStepLayout() {
+        switch (opretOpskriftTrin) {
+            case 0:
+                billedeTitelLayout.setVisibility(View.VISIBLE);
+                ingrediensLayout.setVisibility(View.GONE);
+                overskriftTextView.setText("Vælg hovedbillede og titel");
+                break;
+            case 1:
+                billedeTitelLayout.setVisibility(View.GONE);
+                ingrediensLayout.setVisibility(View.VISIBLE);
+                overskriftTextView.setText("Vælg ingredienser");
+                break;
+            case 2:
+                ingrediensLayout.setVisibility(View.GONE);
+                trinLayout.setVisibility(View.VISIBLE);
+                overskriftTextView.setText("Opret trin");
+                break;
         }
     }
 }
