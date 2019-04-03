@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.ExifInterface;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.Nullable;
@@ -19,7 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Vi har lavet en klass Helpers som kan vi bruges i andre metode i andre class
+ * Vi har lavet en klasse Helpers som kan vi bruges i andre metode i andre class
  */
 
 public class Helpers {
@@ -87,7 +86,7 @@ public class Helpers {
 
 
     /**
-     * Vi har lavet den metode at fjerne kayboard når vi færdig med skriv
+     * Vi har lavet den metode at fjerne keyboard når vi færdig med skrive.
      * @param editText
      */
     public static void RemoveKeyboard(EditText editText) {
@@ -98,6 +97,7 @@ public class Helpers {
     /**
      *
      * @param event
+     * Denne metode
      * @param keyCode
      * @return
      */
