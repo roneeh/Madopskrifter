@@ -12,13 +12,9 @@ import android.widget.ListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment {
+public class ProfilFragment extends Fragment {
 
-    ListView profileListView;
-
-    String profileData[] = {"Email", "sadfa", "xdsfs"};
-
-    public ProfileFragment() {
+    public ProfilFragment() {
         // Required empty public constructor
     }
 
