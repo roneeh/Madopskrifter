@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
+
+    public Profil currentProfile;
+
     public static MainActivity currentMainActivity;
 
     @Override

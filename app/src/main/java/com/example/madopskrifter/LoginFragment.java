@@ -101,6 +101,10 @@ public class LoginFragment extends Fragment {
                 if(resultSet.next()) {
                     MainActivity.currentMainActivity.ChangeFragment(new ForsideFragment());
                     MainActivity.currentMainActivity.findViewById(R.id.menuLayout).setVisibility(View.VISIBLE);
+
+                    MainActivity.currentMainActivity.currentProfile = new Profil(resultSet.getInt("brugerId"),
+                            resultSet.getString("brugerNavn"), resultSet.getString("brugerEmail"),
+                            resultSet.getString("brugerPassword"), resultSet.getBoolean("brugerAdmin"));
                 }
                 else
                 {
