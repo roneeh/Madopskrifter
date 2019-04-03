@@ -29,7 +29,7 @@ public class LoginFragment extends Fragment {
     }
 
     /**
-     *
+     * Den metode implementere de knapp på login side for logget ind i bruger side
      * @param inflater
      * @param container
      * @param savedInstanceState
