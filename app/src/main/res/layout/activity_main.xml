@@ -8,11 +8,10 @@
     android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:id="@+id/menuLayout"
         android:orientation="vertical"
-        android:layout_weight="1"
         android:gravity="center"
         android:background="@color/colorSlightlyLight"
         >
@@ -48,10 +47,10 @@
     </LinearLayout>
 
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="5"
         android:id="@+id/mainContent"
         android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:paddingTop="10dp"/>
 </LinearLayout>

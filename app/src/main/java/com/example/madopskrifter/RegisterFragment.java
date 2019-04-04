@@ -15,7 +15,7 @@ import java.sql.ResultSet;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass.x
  */
 public class RegisterFragment extends Fragment {
 

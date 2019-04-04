@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class ForsideFragment extends Fragment {
 
 
-    public TextView textView;
+    public TextView textView; ///< Dette tekst view blev brugt til test. Det har ikke noget formål lige nu.
 
     public ForsideFragment() {
         // Required empty public constructor
