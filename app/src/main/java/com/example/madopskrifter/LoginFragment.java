@@ -111,7 +111,8 @@ public class LoginFragment extends Fragment {
                 }
             }
         });
-        sqlQueryWithResult.execute("SELECT * FROM Bruger WHERE brugerNavn='" + LoginFragment.this.txtUsername.getText() + "' AND brugerPassword='" + LoginFragment.this.txtPassword.getText() + "'" );
+        sqlQueryWithResult.execute("SELECT * FROM Bruger WHERE brugerNavn='" + LoginFragment.this.txtUsername.getText()
+                + "' AND brugerPassword='" + LoginFragment.this.txtPassword.getText() + "'" );
     }
 
 }

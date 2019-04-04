@@ -46,7 +46,6 @@ public class RegistrerFragment extends Fragment {
 
                 if ((txtPassword.getText()).equals(txtConfirmPass.getText()))
                 {
-                    Log.w("UH","HUHUHUUH");
                     Toast.makeText(v.getContext(), "Passwordene skal være ens! " +
                             txtConfirmPass.getText() + " " + txtPassword.getText(), Toast.LENGTH_LONG).show();
                     return;
