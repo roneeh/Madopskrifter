@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -35,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.indstillingerButton).setOnClickListener(this);
         findViewById(R.id.menuLayout).setVisibility(View.GONE);
         ChangeFragment(new LoginFragment());
-
+        findViewById(R.id.menuLayout).setVisibility(View.GONE);
+        ChangeFragment(new LoginFragment());
     }
 
     protected void ChangeFragment(Fragment fragment)
