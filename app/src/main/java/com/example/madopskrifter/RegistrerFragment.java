@@ -17,12 +17,12 @@ import java.sql.ResultSet;
 /**
  * A simple {@link Fragment} subclass.x
  */
-public class RegisterFragment extends Fragment {
+public class RegistrerFragment extends Fragment {
 
     EditText txtUsername, txtEmail, txtPassword, txtConfirmPass;
 
 
-    public RegisterFragment() {
+    public RegistrerFragment() {
         // Required empty public constructor
     }
 
@@ -46,7 +46,6 @@ public class RegisterFragment extends Fragment {
 
                 if ((txtPassword.getText()).equals(txtConfirmPass.getText()))
                 {
-                    Log.w("UH","HUHUHUUH");
                     Toast.makeText(v.getContext(), "Passwordene skal være ens! " +
                             txtConfirmPass.getText() + " " + txtPassword.getText(), Toast.LENGTH_LONG).show();
                     return;

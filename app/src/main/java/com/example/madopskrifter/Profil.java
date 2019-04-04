@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ * En klasse til profil
+ * Formåle i denne klasse er, at brugen kan redigere og andre brugen kan instentierer på
  */
 public class Profil {
     private int brugerId;
@@ -84,7 +85,7 @@ public class Profil {
         return egenOpskrift;
     }
 
-    public void AddToEgenOpskrift(Opskrift egenOpskrift) {
+    public void addToEgenOpskrift(Opskrift egenOpskrift) {
         this.egenOpskrift.add(egenOpskrift);
     }
 
@@ -92,7 +93,7 @@ public class Profil {
         return likeOpskrift;
     }
 
-    public void setLikeOpskrift(Opskrift likeOpskrift) {
+    public void addToLikeOpskrift(Opskrift likeOpskrift) {
         this.likeOpskrift.add(likeOpskrift);
     }
 

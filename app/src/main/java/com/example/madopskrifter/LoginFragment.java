@@ -2,7 +2,6 @@ package com.example.madopskrifter;
 
 
 import android.os.Bundle;
-import android.support.constraint.solver.widgets.Helper;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -83,7 +82,7 @@ public class LoginFragment extends Fragment {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.currentMainActivity.ChangeFragment(new RegisterFragment());
+                MainActivity.currentMainActivity.ChangeFragment(new RegistrerFragment());
             }
         });
 
