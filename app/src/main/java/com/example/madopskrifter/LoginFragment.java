@@ -98,7 +98,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void doJob(ResultSet resultSet) throws SQLException {
                 if(resultSet.next()) {
-                    MainActivity.currentMainActivity.ChangeFragment(new ForsideFragment());
+                    MainActivity.currentMainActivity.ChangeFragment(new ProfilFragment());
                     MainActivity.currentMainActivity.findViewById(R.id.menuLayout).setVisibility(View.VISIBLE);
 
                     MainActivity.currentMainActivity.currentProfile = new Profil(resultSet.getInt("brugerId"),

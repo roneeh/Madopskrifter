@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.indstillingerButton).setOnClickListener(this);
         findViewById(R.id.menuLayout).setVisibility(View.GONE);
         ChangeFragment(new LoginFragment());
-        findViewById(R.id.menuLayout).setVisibility(View.GONE);
-        ChangeFragment(new LoginFragment());
     }
 
     protected void ChangeFragment(Fragment fragment)

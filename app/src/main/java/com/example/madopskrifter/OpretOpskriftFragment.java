@@ -132,6 +132,7 @@ public class OpretOpskriftFragment extends Fragment {
             case 1:
                 billedeTitelLayout.setVisibility(View.GONE);
                 ingrediensLayout.setVisibility(View.VISIBLE);
+                trinLayout.setVisibility(View.GONE);
                 overskriftTextView.setText("Vælg ingredienser");
                 break;
             case 2:
