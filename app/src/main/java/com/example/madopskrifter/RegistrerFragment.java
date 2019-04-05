@@ -67,6 +67,13 @@ public class RegistrerFragment extends Fragment {
             }
         });
 
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.currentMainActivity.ChangeFragment(new LoginFragment());
+            }
+        });
+
         return view;
     }
 
